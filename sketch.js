@@ -38,7 +38,8 @@ function draw() {
   fill(358, 55, 100);
   textAlign(CENTER, TOP);
   text("Happy Birthday Pickle", 10, 20, width);
-  textSize(10);
+  textSize(10);  
+  fill(358, 0, 100);
   text("Beyond the dark there is infinite colour", 10, 70, width);
 
   // move and zoom arrow, + and -
