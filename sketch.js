@@ -24,19 +24,21 @@ function setup() {
 
   // buttons
   button1 = createButton("left arrow");
-  button1.position(0, 220);
+  button1.position(0, 200);
   button2 = createButton("right arrow");
-  button2.position(0, 240);
+  button2.position(0, 220);
   button3 = createButton("up arrow");
-  button3.position(0, 260);
+  button3.position(0, 240);
   button4 = createButton("down arrow");
-  button4.position(0, 280);
+  button4.position(0, 260);
   button5 = createButton("zoom in");
-  button5.position(0, 300);
+  button5.position(0, 280);
   button6 = createButton("zoom out");
-  button6.position(0, 320);
+  button6.position(0, 300);
   button7 = createButton("play synthwave");
-  button7.position(0, 340);
+  button7.position(0, 320);
+  button8 = createButton("stop synthwave");
+  button8.position(0, 340);
   button1.mousePressed(moveLeft);
   button2.mousePressed(moveRight);
   button3.mousePressed(moveUp);
@@ -44,6 +46,7 @@ function setup() {
   button5.mousePressed(zoomIn);
   button6.mousePressed(zoomOut);
   button7.mousePressed(synth);
+  button8.mousePressed(nosynth);
 }
 function draw() {
   // greeting with ST font and color
@@ -88,7 +91,7 @@ function draw() {
   textFont("Courier New");
   noStroke();
   fill(358, 0, 100);
-  text("Scale: " + scale, 50, 200);
+  text("Scale: " + scale, 50, 180);
 
   // redraw if true
   if (redraw) {
@@ -143,11 +146,13 @@ function zoomOut() {
   }
 }
 function synth(){
- //userStartAudio();
   mySong.loop();
   mySong.setVolume(0.1);
 }
-
+function nosynth(){
+   mySong.stop();
+ }
+ 
 function drawBrot() {
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
