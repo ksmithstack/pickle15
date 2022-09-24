@@ -71,7 +71,7 @@ function draw() {
   textFont("Courier New");
   noStroke();
   fill(358, 0, 100);
-  text("Scale: " + scale, 50, 330);
+  text("Scale: " + scale, 50, 300);
 
   // redraw if true
   if (redraw) {
